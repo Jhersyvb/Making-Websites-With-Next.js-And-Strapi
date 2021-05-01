@@ -15,7 +15,6 @@ function Header({ isDark }) {
 }
 
 const HeaderStyled = styled.header`
-  /* background: ${props => props.theme.colors.primary}; */
   background: ${props => (props.isDark ? '#000000' : '#efefef')};
   padding: 20px;
 

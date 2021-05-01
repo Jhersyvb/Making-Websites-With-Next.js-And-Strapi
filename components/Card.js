@@ -22,7 +22,7 @@ const CardStyled = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   margin-top: 50px;
   overflow: hidden;
-  width: 400px;
+  width: '100%';
 
   .body {
     padding: 20px;
