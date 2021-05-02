@@ -3,8 +3,9 @@ import { rem } from 'polished'
 import { Flex } from 'rebass'
 import Link from 'next/link'
 import Navigation from './Navigation'
+import ToggleNavigationColorButton from './ToggleNavigationColorButton'
 
-function Header({ isDark, navigation }) {
+function Header({ isDark }) {
   return (
     <HeaderStyled isDark={isDark}>
       <div className="container">
@@ -17,7 +18,8 @@ function Header({ isDark, navigation }) {
               </a>
             </Link>
           </div>
-          <Navigation navigation={navigation} />
+          <Navigation />
+          <ToggleNavigationColorButton />
         </Flex>
       </div>
     </HeaderStyled>
