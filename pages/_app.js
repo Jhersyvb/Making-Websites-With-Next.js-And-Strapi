@@ -1,4 +1,3 @@
-import '../styles/globals.css'
 import Header from 'components/Header'
 import { ThemeProvider } from 'emotion-theming'
 import GlobalStyles from 'components/GlobalStyles/GlobalStyles'
