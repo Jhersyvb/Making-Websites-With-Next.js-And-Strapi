@@ -4,10 +4,17 @@ import Link from 'next/link'
 function Card({ movie }) {
   const { API_URL } = process.env
 
+  if (!movie.genre) {
+    movie.genre = {}
+    movie.genre.slug = 'uncategorised'
+  }
+
   return (
     <CardStyled>
       <div className="poster">
-        <img src={API_URL + movie.poster.url} alt={movie.title} />
+        {movie.poster && (
+          <img src={API_URL + movie.poster.url} alt={movie.title} />
+        )}
       </div>
       <div className="body">
         <h3>{movie.title}</h3>
