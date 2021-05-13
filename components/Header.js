@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { rem } from 'polished'
-import { Flex } from 'rebass'
+import { Box, Flex } from 'rebass'
 import Link from 'next/link'
 import Navigation from './Navigation'
 import ToggleNavigationColorButton from './ToggleNavigationColorButton'
@@ -8,7 +8,7 @@ import ToggleNavigationColorButton from './ToggleNavigationColorButton'
 function Header({ isDark }) {
   return (
     <HeaderStyled isDark={isDark}>
-      <div className="container">
+      <Box variant="container">
         <Flex justifyContent="space-between" alignItems="center">
           <div className="logo">
             <Link href="/">
@@ -21,7 +21,7 @@ function Header({ isDark }) {
           <Navigation />
           <ToggleNavigationColorButton />
         </Flex>
-      </div>
+      </Box>
     </HeaderStyled>
   )
 }
