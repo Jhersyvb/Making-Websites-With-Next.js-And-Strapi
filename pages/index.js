@@ -1,13 +1,16 @@
 import { Box, Flex } from 'rebass'
 import Card from '../components/Card'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next'
 
 const Home = ({ movies }) => {
+  const { t } = useTranslation('common')
   console.log(movies)
 
   return (
     <Box variant="container">
       <Box my={40} as="h2">
-        Latest Movies
+        {t('Latest Movies')}
       </Box>
       <Flex
         justifyContent="space-between"
@@ -24,7 +27,7 @@ const Home = ({ movies }) => {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ locale }) {
   const { API_URL } = process.env
 
   const res = await fetch(`${API_URL}/movies`)
@@ -33,6 +36,7 @@ export async function getServerSideProps() {
   return {
     props: {
       movies: data,
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   }
 }

@@ -10,7 +10,7 @@ function Navigation() {
   const { menuItems, color } = useContext(HeaderContext)
 
   return (
-    <NavigationStyled color={color}>
+    <NavigationStyled>
       <ul>
         {menuItems.map(item => (
           <li key={item.id}>
@@ -39,7 +39,7 @@ const NavigationStyled = styled.div`
 
     a {
       text-decoration: none;
-      color: ${props => (props.color ? '#4C9EE3' : '#000000')};
+      color: #4C9EE3;
 
       &:hover {
         text-decoration: underline;
