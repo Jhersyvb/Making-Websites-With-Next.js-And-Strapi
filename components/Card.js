@@ -2,6 +2,8 @@ import styled from '@emotion/styled'
 import Link from 'next/link'
 import Image from 'next/image'
 
+import propTypes from 'prop-types'
+
 function Card({ movie }) {
   const { API_URL } = process.env
 
@@ -33,6 +35,15 @@ function Card({ movie }) {
       </div>
     </CardStyled>
   )
+}
+
+Card.propTypes = {
+  // movie: propTypes.object.isRequired,
+  // movie: propTypes.any.isRequired,
+  // movie: propTypes.shape({
+  //   id: propTypes.number,
+  // }).isRequired,
+  movie: propTypes.oneOfType([propTypes.array, propTypes.object]),
 }
 
 const CardStyled = styled.div`
