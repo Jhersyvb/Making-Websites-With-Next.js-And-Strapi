@@ -2,6 +2,7 @@ import { Box, Flex } from 'rebass'
 import Card from '../components/Card'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
+import Image from 'next/image'
 
 const Home = ({ movies }) => {
   const { t } = useTranslation('common')
@@ -9,6 +10,7 @@ const Home = ({ movies }) => {
 
   return (
     <Box variant="container">
+      <Image src="/images/movie-time.png" width={2400} height={980} />
       <Box my={40} as="h2">
         {t('Latest Movies')}
       </Box>

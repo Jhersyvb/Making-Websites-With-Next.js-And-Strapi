@@ -10,10 +10,10 @@
   "dependencies": {
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.3.0",
-    "dotenv": "^8.2.0",
+    "dotenv": "^9.0.2",
     "emotion-theming": "^10.0.27",
     "next": "^10.2.0",
-    "next-i18next": "^8.2.0",
+    "next-i18next": "^8.3.0",
     "next-seo": "^4.24.0",
     "nookies": "^2.5.2",
     "polished": "^4.1.2",
