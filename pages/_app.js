@@ -9,8 +9,11 @@ import ContextWrapper from 'components/ContextWrapper'
 import { appWithTranslation } from 'next-i18next'
 import Router from 'next/router'
 import { parseCookies } from 'nookies'
+import { QueryClientProvider, QueryClient } from 'react-query'
 
 import SEO from '../next-seo.config'
+
+const queryClient = new QueryClient()
 
 function MyApp({ Component, pageProps, navigation }) {
   console.log(navigation)
@@ -23,7 +26,9 @@ function MyApp({ Component, pageProps, navigation }) {
         <ContextWrapper navigation={navigation}>
           <Header />
         </ContextWrapper>
-        <Component {...pageProps} />
+        <QueryClientProvider client={queryClient}>
+          <Component {...pageProps} />
+        </QueryClientProvider>
       </ThemeProvider>
     </>
   )
