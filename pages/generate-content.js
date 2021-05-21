@@ -6,7 +6,7 @@ const { publicRuntimeConfig } = getConfig()
 
 function GenerateContent() {
   async function addContent() {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 100; i++) {
       const postData = {
         title: faker.lorem.sentence(),
         content: faker.lorem.paragraphs(),
